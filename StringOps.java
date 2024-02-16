@@ -22,7 +22,7 @@ public class StringOps {
     //////                                               ///////
     ////////////////////////////////////////////////////////////
     public static void main(String[] args) {
-        System.out.println(capVowelsLowRest("Hello World"));
+        System.out.println(capVowelsLowRest("vowels are fun"));
     }
 
     public static String capVowelsLowRest (String string) {
@@ -100,14 +100,14 @@ public class StringOps {
     }
    
     public static char Upper(char a){
-        if(a<'z' && a> 'a'){
+        if(a <= 'z' && a >= 'a'){
             return (char)(a-32); 
         }else{
             return a;
         }
     }
     public static char Lower(char a){
-        if(a<'Z' && a> 'A'){
+        if(a<='Z' && a >= 'A'){
         return (char)(a+32); 
         }else{
             return a;
