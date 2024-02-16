@@ -1,7 +1,7 @@
 public class ArrayOps {
     public static void main(String[] args) {
         int [] Tester = { 1, 2, 3};
-        int [] Tester2 = {-1,-2,-3,-4,5};
+        int [] Tester2 = {2, 8, 3, 7, 8};
         System.out.println(secondMaxValue(Tester2));
 
     }
@@ -21,9 +21,16 @@ public class ArrayOps {
     }
 
     public static int secondMaxValue(int [] array) {
-        int max,min;
+        int max,min, counter = 0;
         max = GetMax(array);
         min = GetMin(array);
+        for(int i =0; i<(array.length); i++){
+            if(array[i] == max)
+            counter ++;
+        }
+        if (counter>1) {
+            return max;
+        }
         for (int i =0; i<(array.length); i++){
             if(min < array[i] && array[i] < max){
                 min = array[i];
