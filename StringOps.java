@@ -22,23 +22,18 @@ public class StringOps {
     //////                                               ///////
     ////////////////////////////////////////////////////////////
     public static void main(String[] args) {
+        System.out.println(capVowelsLowRest("Hello World"));
     }
 
     public static String capVowelsLowRest (String string) {
         String newString = "";
-        char tempChar;
-        int tempInt;
+    
         for (int i = 0; i<string.length(); i++ ){
             if (IsVowl(string.charAt(i))){
-                newString += (char)(string.charAt(i)-32); 
+                newString += Upper(string.charAt(i)); 
             }
-            else if(!IsVowl(string.charAt(i)) && (int)string.charAt(i) <= 90 && (int)string.charAt(i) >= 65 )  {
-                tempInt =  string.charAt(i) + 32;
-                tempChar = (char)tempInt;
-                newString += tempChar;
-            }
-            else{
-                newString += string.charAt(i); 
+            else if(!IsVowl(string.charAt(i)))  {
+                newString += Lower(string.charAt(i));
             }
         }
         return newString;
@@ -97,7 +92,7 @@ public class StringOps {
         return arrCounter;
     }
     public static boolean IsVowl(char a){
-        if (a == 'a' || a == 'e' || a == 'i' || a == 'o' || a == 'u'){
+        if (a == 'a' || a == 'e' || a == 'i' || a == 'o' || a == 'u' || a == 'A' || a == 'E' || a == 'I' || a == 'O' || a == 'U'){
             return true;
         }else{
             return false;

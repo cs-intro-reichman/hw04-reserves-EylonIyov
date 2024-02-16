@@ -1,7 +1,7 @@
 public class ArrayOps {
     public static void main(String[] args) {
         int [] Tester = { 1, 2, 3};
-        int [] Tester2 = {-1,-2,-3,-4};
+        int [] Tester2 = {-1,-2,-3,-4,5};
         System.out.println(secondMaxValue(Tester2));
 
     }
@@ -21,14 +21,15 @@ public class ArrayOps {
     }
 
     public static int secondMaxValue(int [] array) {
-        int max, secondMax = array[0];
+        int max,min;
         max = GetMax(array);
-        for (int i =1; i<(array.length); i++){
-            if ((array[i] > array[i-1]) && (array[i] != max)){
-                secondMax = array[i];
+        min = GetMin(array);
+        for (int i =0; i<(array.length); i++){
+            if(min < array[i] && array[i] < max){
+                min = array[i];
             }
         }
-        return secondMax;
+        return min;
     }
 
     public static boolean containsTheSameElements(int [] array1,int [] array2) {
